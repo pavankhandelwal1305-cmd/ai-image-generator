@@ -51,6 +51,8 @@ const Login = () => {
     }
   };
 
+  console.log(backendUrl);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {

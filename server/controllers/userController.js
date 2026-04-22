@@ -2,6 +2,14 @@ import userModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+const token = jwt.sign(
+  { id: "12345" },          // payload (user data)
+  "mysecretkey123",         // secret key
+  { expiresIn: "1d" }       // optional expiry
+);
+
+console.log(token);
+
 const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
